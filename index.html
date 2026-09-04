@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InAmigos Foundation | NGO Social Impact & Community Platform</title>
+  <meta name="description" content="A Section 8 Non-Profit organization registered with NITI Aayog, 80G, 12A, and ISO certifications dedicated to ground-level social transformation across India.">
+  <meta property="og:title" content="InAmigos Foundation | NGO Social Impact & Community Platform">
+  <meta property="og:description" content="A Section 8 Non-Profit organization registered with NITI Aayog, 80G, 12A, and ISO certifications dedicated to ground-level social transformation across India.">
+  <meta property="og:type" content="nonprofit">
+
+  <style>
+    /* ==========================================================================
+       CSS RESET & DESIGN TOKENS
+       ========================================================================== */
+    :root {
+      /* Sleek Theme Palette */
+      --color-deep-navy: #0f172a;
+      --color-dark-slate: #1e293b;
+      --color-accent-blue: #3b82f6;
+      --color-accent-blue-hover: #2563eb;
+      --color-accent-light: #eff6ff;
+      --color-accent-subtle: #dbeafe;
+      --color-light-bg: #f8fafc;
+      --color-surface-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-border-hover: #cbd5e1;
+      --color-text-primary: #0f172a;
+      --color-text-secondary: #1e293b;
+      --color-text-muted: #64748b;
+      --color-success: #10b981;
+      --color-success-bg: #ecfdf5;
+
+      /* Sleek Radii System */
+      --radius-3xl: 24px;
+      --radius-2xl: 16px;
+      --radius-xl: 12px;
+      --radius-lg: 10px;
+      --radius-md: 8px;
+      --radius-full: 9999px;
+
+      /* Typography */
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+      /* Sleek Elevation & Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+      --shadow-sleek: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+      --shadow-card-hover: 0 20px 40px -12px rgba(59, 130, 246, 0.12), 0 6px 16px -4px rgba(15, 23, 42, 0.05);
+      --shadow-primary-btn: 0 10px 20px -3px rgba(59, 130, 246, 0.28);
+      --shadow-primary-btn-hover: 0 14px 26px -3px rgba(59, 130, 246, 0.4);
+
+      /* Layout & Animation */
+      --container-max-width: 1200px;
+      --nav-height: 76px;
+      --transition-base: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text-secondary);
+      background-color: var(--color-light-bg);
+      line-height: 1.65;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-base);
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: var(--container-max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .section-spacing {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    /* Section Header Typography */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 60px auto;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-accent-blue);
+      background-color: var(--color-accent-light);
+      border: 1px solid var(--color-accent-subtle);
+      border-radius: var(--radius-full);
+      margin-bottom: 18px;
+      white-space: nowrap;
+    }
+
+    .section-title {
+      font-size: 2.375rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.0625rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
+    /* Sleek Interface Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: var(--radius-xl);
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--color-accent-blue);
+      color: #ffffff;
+      box-shadow: var(--shadow-primary-btn);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-accent-blue-hover);
+      box-shadow: var(--shadow-primary-btn-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: var(--color-surface-white);
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-border-hover);
+      background-color: var(--color-light-bg);
+      transform: translateY(-2px);
+    }
+
+    /* Focus States */
+    :focus-visible {
+      outline: 2px solid var(--color-accent-blue);
+      outline-offset: 3px;
+    }
+
+    /* ==========================================================================
+       1. HEADER & NAVBAR (FLEXBOX)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background-color: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 1000;
+      transition: var(--transition-base);
+    }
+
+    .site-header.scrolled {
+      background-color: rgba(255, 255, 255, 0.97);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--color-accent-blue);
+      color: #ffffff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .brand-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: #ffffff;
+      stroke-width: 2.25;
+    }
+
+    .brand-tag {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--color-accent-blue);
+      background-color: var(--color-accent-light);
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-left: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      position: relative;
+      padding: 8px 0;
+      transition: var(--transition-base);
+    }
+
+    .nav-link:hover {
+      color: var(--color-text-primary);
+    }
+
+    .nav-link.active {
+      color: var(--color-accent-blue);
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-accent-blue);
+      border-radius: 2px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Sleek Pill Header CTA Button */
+    #navbar-cta-btn {
+      background-color: var(--color-deep-navy);
+      color: #ffffff;
+      border-radius: var(--radius-full);
+      padding: 10px 22px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+      border: none;
+    }
+
+    #navbar-cta-btn:hover {
+      background-color: var(--color-dark-slate);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+    }
+
+    /* Mobile Hamburger Button */
+    .mobile-menu-toggle {
+      display: none;
+      padding: 8px;
+      color: var(--color-text-primary);
+      border-radius: 8px;
+      transition: var(--transition-base);
+    }
+
+    .mobile-menu-toggle:hover {
+      background-color: var(--color-light-bg);
+    }
+
+    .mobile-menu-toggle svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-nav-drawer {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1);
+      padding: 24px;
+      z-index: 999;
+      flex-direction: column;
+      gap: 12px;
+      border-radius: 0 0 var(--radius-3xl) var(--radius-3xl);
+    }
+
+    .mobile-nav-drawer.open {
+      display: flex;
+    }
+
+    .mobile-nav-link {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      padding: 12px 16px;
+      border-radius: var(--radius-xl);
+      transition: var(--transition-base);
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      color: var(--color-accent-blue);
+      background-color: var(--color-accent-light);
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      padding-top: 72px;
+      padding-bottom: 96px;
+      background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at bottom left, rgba(15, 23, 42, 0.02) 0%, transparent 40%),
+                  var(--color-surface-white);
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      background-color: var(--color-accent-light);
+      border: 1px solid var(--color-accent-subtle);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-accent-blue);
+      margin-bottom: 24px;
+    }
+
+    .status-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-success);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    }
+
+    .hero-title {
+      font-size: 3.25rem;
+      font-weight: 800;
+      color: var(--color-deep-navy);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 22px;
+    }
+
+    .hero-title span {
+      color: var(--color-accent-blue);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      border-top: 1px solid var(--color-border);
+      padding-top: 30px;
+      width: 100%;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-size: 1.875rem;
+      font-weight: 800;
+      color: var(--color-deep-navy);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      margin-top: 2px;
+    }
+
+    /* Hero Visual Column & Card */
+    .hero-visual {
+      position: relative;
+      width: 100%;
+    }
+
+    .code-preview-card {
+      background-color: var(--color-deep-navy);
+      border-radius: var(--radius-3xl);
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      color: #e2e8f0;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      position: relative;
+    }
+
+    /* Sleek Ambient Blue Light */
+    .code-preview-card::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 160px;
+      height: 160px;
+      background: var(--color-accent-blue);
+      opacity: 0.22;
+      filter: blur(45px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .card-topbar, .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background-color: #1e293b;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .window-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background-color: #ef4444; }
+    .dot-yellow { background-color: #f59e0b; }
+    .dot-green { background-color: #10b981; }
+
+    .file-tab {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .code-body {
+      padding: 24px;
+      line-height: 1.75;
+    }
+
+    .code-line {
+      display: flex;
+    }
+
+    .line-num {
+      color: #475569;
+      width: 28px;
+      user-select: none;
+      text-align: right;
+      padding-right: 14px;
+    }
+
+    .code-text {
+      flex: 1;
+    }
+
+    .token-keyword { color: #f43f5e; }
+    .token-fn { color: #38bdf8; }
+    .token-var { color: #fbbf24; }
+    .token-str { color: #a3e635; }
+    .token-comment { color: #64748b; font-style: italic; }
+
+    /* Interactive Floating Badge */
+    .floating-metric-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -16px;
+      background-color: var(--color-surface-white);
+      color: var(--color-deep-navy);
+      padding: 14px 20px;
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-sleek), 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-family);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .metric-icon-circle {
+      width: 40px;
+      height: 40px;
+      background-color: #ecfdf5;
+      color: #10b981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .metric-icon-circle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .metric-data strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+    }
+
+    .metric-data span {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       3. ABOUT SECTION (GRID LAYOUT)
+       ========================================================================== */
+    .about-section {
+      background-color: var(--color-light-bg);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-narrative {
+      background-color: var(--color-surface-white);
+      padding: 40px;
+      border-radius: var(--radius-3xl);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sleek);
+    }
+
+    .about-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 16px;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .about-narrative p {
+      margin-bottom: 18px;
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .pillar-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .pillar-icon {
+      color: var(--color-accent-blue);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .pillar-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .pillar-text h4 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 3px;
+    }
+
+    .pillar-text p {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0;
+      line-height: 1.45;
+    }
+
+    /* Skills Column */
+    .about-skills {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .skill-category-card {
+      background-color: var(--color-surface-white);
+      padding: 26px 30px;
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sleek);
+      transition: var(--transition-smooth);
+    }
+
+    .skill-category-card:hover {
+      border-color: var(--color-border-hover);
+      box-shadow: 0 14px 28px -6px rgba(15, 23, 42, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .category-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background-color: var(--color-accent-light);
+      color: var(--color-accent-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .category-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .skill-badges-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      background-color: var(--color-light-bg);
+      border: 1px solid var(--color-border);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      transition: var(--transition-base);
+    }
+
+    .tech-pill:hover {
+      background-color: var(--color-accent-light);
+      border-color: var(--color-accent-subtle);
+      color: var(--color-accent-blue);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       4. SERVICES SECTION (3-COLUMN CSS GRID)
+       ========================================================================== */
+    .services-section {
+      background-color: var(--color-surface-white);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 1200px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .service-card {
+      background-color: var(--color-surface-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-3xl);
+      padding: 38px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-sleek);
+    }
+
+    /* Hover effect required by prompt */
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--color-accent-blue);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .service-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background-color: var(--color-accent-light);
+      color: var(--color-accent-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: var(--transition-base);
+    }
+
+    .service-card:hover .service-icon-box {
+      background-color: var(--color-accent-blue);
+      color: #ffffff;
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+    }
+
+    .service-icon-box svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 12px;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .service-description {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .service-feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .service-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+
+    .feature-check {
+      color: var(--color-accent-blue);
+      flex-shrink: 0;
+    }
+
+    .feature-check svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .service-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-accent-blue);
+      margin-top: auto;
+      transition: var(--transition-base);
+    }
+
+    .service-action-link:hover {
+      color: var(--color-accent-blue-hover);
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       5. PROJECTS / PORTFOLIO SECTION (3 CARDS + INTERACTIVE FEATURES)
+       ========================================================================== */
+    .projects-section {
+      background-color: var(--color-light-bg);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .portfolio-filters {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      background-color: var(--color-surface-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      transition: var(--transition-base);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--color-border-hover);
+      background-color: var(--color-light-bg);
+      transform: translateY(-1px);
+    }
+
+    .filter-btn.active {
+      background-color: var(--color-deep-navy);
+      color: #ffffff;
+      border-color: var(--color-deep-navy);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .project-card {
+      background-color: var(--color-surface-white);
+      border-radius: var(--radius-3xl);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sleek);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: var(--color-accent-blue);
+    }
+
+    .project-visual {
+      height: 210px;
+      background-color: var(--color-dark-slate);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    /* CSS UI Mockup graphics for projects */
+    .mockup-canvas {
+      width: 86%;
+      height: 80%;
+      background: #0f172a;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mockup-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 6px;
+    }
+
+    .mockup-tag {
+      font-size: 0.6875rem;
+      font-family: var(--font-mono);
+      color: var(--color-accent-blue);
+    }
+
+    .mockup-chart {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      padding-top: 6px;
+    }
+
+    .chart-bar {
+      flex: 1;
+      background: linear-gradient(to top, #3b82f6, #60a5fa);
+      border-radius: 3px 3px 0 0;
+      transition: height 0.4s ease;
+    }
+
+    .project-card:hover .chart-bar {
+      filter: brightness(1.15);
+    }
+
+    .project-badge-overlay {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(6px);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .project-details {
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-category {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-accent-blue);
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 10px;
+      letter-spacing: -0.015em;
+    }
+
+    .project-description {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .project-tag-pill {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      background-color: var(--color-light-bg);
+      color: var(--color-text-muted);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+    }
+
+    .project-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .project-action-btn {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-lg);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-base);
+    }
+
+    .action-btn-case {
+      background-color: var(--color-light-bg);
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border);
+    }
+
+    .action-btn-case:hover {
+      background-color: var(--color-accent-light);
+      border-color: var(--color-accent-subtle);
+      color: var(--color-accent-blue);
+      transform: translateY(-1px);
+    }
+
+    .action-btn-demo {
+      background-color: transparent;
+      color: var(--color-accent-blue);
+      margin-left: auto;
+    }
+
+    .action-btn-demo:hover {
+      color: var(--color-accent-blue-hover);
+    }
+
+    /* Modal Overlay for Interactive Case Studies */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background-color: var(--color-surface-white);
+      border-radius: var(--radius-3xl);
+      max-width: 640px;
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+      border: 1px solid var(--color-border);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 40px;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      color: var(--color-text-muted);
+      padding: 6px;
+      border-radius: var(--radius-md);
+      transition: var(--transition-base);
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--color-light-bg);
+      color: var(--color-text-primary);
+    }
+
+    .modal-close-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .modal-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-accent-blue);
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-size: 1.625rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .modal-body {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    .modal-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      background-color: var(--color-light-bg);
+      padding: 18px 22px;
+      border-radius: var(--radius-xl);
+      margin: 22px 0;
+      border: 1px solid var(--color-border);
+    }
+
+    .meta-item h5 {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .meta-item p {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    /* ==========================================================================
+       6. CONTACT SECTION (FORM + DETAILS)
+       ========================================================================== */
+    .contact-section {
+      background-color: var(--color-surface-white);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .contact-info-panel {
+      background-color: var(--color-deep-navy);
+      color: #ffffff;
+      padding: 48px 40px;
+      border-radius: var(--radius-3xl);
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-info-panel::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .info-title {
+      font-size: 1.625rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .info-subtitle {
+      font-size: 0.9375rem;
+      color: #94a3b8;
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .channel-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .channel-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: var(--color-accent-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .channel-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .channel-content h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #94a3b8;
+      margin-bottom: 3px;
+    }
+
+    .channel-content p, .channel-content a {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .channel-content a:hover {
+      color: var(--color-accent-blue);
+    }
+
+    .guarantee-box {
+      padding: 16px 18px;
+      border-radius: var(--radius-xl);
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .guarantee-box svg {
+      width: 22px;
+      height: 22px;
+      color: var(--color-success);
+      flex-shrink: 0;
+    }
+
+    .guarantee-box span {
+      font-size: 0.8125rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+    }
+
+    /* Contact Form Styles */
+    .contact-form-card {
+      background-color: var(--color-surface-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-3xl);
+      padding: 48px 40px;
+      box-shadow: var(--shadow-sleek);
+    }
+
+    .form-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .form-subheading {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 28px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    .form-label span {
+      color: #ef4444;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 13px 18px;
+      font-size: 0.9375rem;
+      color: var(--color-text-primary);
+      background-color: var(--color-surface-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      transition: var(--transition-base);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--color-accent-blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+      outline: none;
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Form Status Alert */
+    .form-alert {
+      display: none;
+      padding: 16px 20px;
+      border-radius: var(--radius-xl);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .form-alert.success {
+      display: flex;
+      background-color: var(--color-success-bg);
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    .form-alert.error {
+      display: flex;
+      background-color: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    .form-alert svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       7. FOOTER SECTION
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--color-deep-navy);
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 76px;
+      padding-bottom: 40px;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-description {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: #94a3b8;
+      max-width: 340px;
+    }
+
+    .footer-column-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-link {
+      font-size: 0.9375rem;
+      color: #94a3b8;
+      transition: var(--transition-base);
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+      transform: translateX(3px);
+    }
+
+    .social-links-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .social-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.06);
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-base);
+    }
+
+    .social-icon-btn:hover {
+      background-color: var(--color-accent-blue);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.875rem;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-to-top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #94a3b8;
+      font-weight: 500;
+      transition: var(--transition-base);
+    }
+
+    .back-to-top-btn:hover {
+      color: #ffffff;
+    }
+
+    .back-to-top-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-visual {
+        max-width: 580px;
+      }
+
+      .services-grid, .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-spacing {
+        padding-top: 64px;
+        padding-bottom: 64px;
+      }
+
+      .section-title {
+        font-size: 1.875rem;
+      }
+
+      .hero-title {
+        font-size: 2.375rem;
+      }
+
+      .nav-menu, .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid, .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 20px 32px;
+      }
+
+      .floating-metric-badge {
+        position: static;
+        margin-top: 16px;
+        animation: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .about-pillars {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- ========================================================================
+       1. HEADER & NAVBAR (FLEXBOX LAYOUT)
+       ======================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container navbar-container">
+      <!-- Brand Logo -->
+      <a href="#top" class="brand-logo" id="nav-brand-logo" aria-label="InAmigos Foundation Homepage">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+        <span>InAmigos</span>
+        <span class="brand-tag">Foundation</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu" id="primary-nav-menu">
+          <li><a href="#home" class="nav-link active" id="link-home">Home</a></li>
+          <li><a href="#services" class="nav-link" id="link-services">Our Initiatives</a></li>
+          <li><a href="#projects" class="nav-link" id="link-projects">Impact</a></li>
+          <li><a href="#about" class="nav-link" id="link-about">Certifications</a></li>
+          <li><a href="#contact" class="nav-link" id="link-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button & Mobile Toggle -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary" id="navbar-cta-btn">
+          <span>Become a Volunteer</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="23" y1="11" x2="17" y2="11"></line>
+          </svg>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true">
+      <a href="#home" class="mobile-nav-link active">Home</a>
+      <a href="#services" class="mobile-nav-link">Our Initiatives</a>
+      <a href="#projects" class="mobile-nav-link">Impact</a>
+      <a href="#about" class="mobile-nav-link">Certifications</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="#contact" class="btn btn-primary" style="margin-top: 8px;">Become a Volunteer</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         2. HERO SECTION
+         ====================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column: Headline & Value Proposition -->
+          <div class="hero-content">
+            <div class="hero-status-badge">
+              <span class="status-pulse-dot"></span>
+              <span>50,000+ Beneficiaries Impacted Across India • Section 8 Regd.</span>
+            </div>
+
+            <h1 class="hero-title">
+              Empowering Communities, <span>Educating Youth</span> & Spreading Compassion
+            </h1>
+
+            <p class="hero-subtitle">
+              A Section 8 Non-Profit organization registered with NITI Aayog, 80G, 12A, and ISO certifications dedicated to ground-level social transformation.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#services" class="btn btn-primary" id="hero-cta-projects">
+                <span>Explore Projects</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary" id="hero-cta-contact">
+                <span>Donate Now</span>
+              </a>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-value">50,000+</span>
+                <span class="stat-label">Beneficiaries</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">28+</span>
+                <span class="stat-label">States Reached</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">200+</span>
+                <span class="stat-label">Active Volunteers</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">6</span>
+                <span class="stat-label">Core Social Causes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Mission Telemetry & Metrics Card -->
+          <div class="hero-visual">
+            <div class="code-preview-card">
+              <div class="card-topbar">
+                <div class="window-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <div class="file-tab">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                  <span>inamigos-impact.live</span>
+                </div>
+              </div>
+
+              <div class="code-body">
+                <div class="code-line">
+                  <span class="line-num">1</span>
+                  <span class="code-text"><span class="token-comment">// InAmigos Foundation - Verified Ground Impact</span></span>
+                </div>
+                <div class="code-line">
+                  <span class="line-num">2</span>
+                  <span class="code-text"><span class="token-keyword">export const</span> <span class="token-var">FoundationTelemetry</span> = {</span>
+                </div>
+                <div class="code-line">
+                  <span class="line-num">3</span>
+                  <span class="code-text">&nbsp;&nbsp;accreditation: <span class="token-str">"NITI Aayog & Section 8"</span>,</span>
+                </div>
+                <div class="code-line">
+                  <span class="line-num">4</span>
+                  <span class="code-text">&nbsp;&nbsp;taxStatus: <span class="token-str">"80G & 12A Certified"</span>,</span>
+                </div>
+                <div class="code-line">
+                  <span class="line-num">5</span>
+                  <span class="code-text">&nbsp;&nbsp;livesImpacted: <span class="token-str">"50,000+ Across 28 States"</span>,</span>
+                </div>
+                <div class="code-line">
+                  <span class="line-num">6</span>
+                  <span class="code-text">&nbsp;&nbsp;activeDrive: <span class="token-fn">dispatchGroundRelief</span>()</span>
+                </div>
+                <div class="code-line">
+                  <span class="line-num">7</span>
+                  <span class="code-text">};</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Metric Badge -->
+            <div class="floating-metric-badge">
+              <div class="metric-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <div class="metric-data">
+                <strong>80G & 12A Certified</strong>
+                <span>100% Tax Exempted & Audited</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. ABOUT & TRANSPARENCY SECTION (NITI AAYOG, 80G, 12A, ISO)
+         ====================================================================== -->
+    <section class="about-section section-spacing" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Transparency & Governance</span>
+          <h2 class="section-title">Ethical Non-Profit Stewardship & Verified Certifications</h2>
+          <p class="section-subtitle">
+            Registered under Section 8 of the Companies Act, InAmigos Foundation maintains rigorous statutory compliance, transparent financial auditing, and government-recognized certifications.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Core Vision & Background Narrative -->
+          <div class="about-narrative">
+            <h3 class="about-heading">Grassroots Compassion Backed by Total Accountability</h3>
+            <p>
+              InAmigos Foundation is a pan-India Section 8 Non-Profit organization rooted in the core conviction that genuine social progress begins at the grassroots. Headquartered in Bilaspur, Chhattisgarh, our youth-driven movement bridges community compassion with structured, measurable field operations.
+            </p>
+            <p>
+              We eliminate bureaucratic friction and intermediary overhead to ensure that every rupee donated reaches hungry families, eager young learners, and distressed stray animals. Our audited accounts and direct handoffs guarantee complete operational transparency.
+            </p>
+
+            <div class="about-pillars">
+              <div class="pillar-box">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div class="pillar-text">
+                  <h4>NITI Aayog Registered</h4>
+                  <p>Enrolled on the Government of India NGO-Darpan portal for compliant operations.</p>
+                </div>
+              </div>
+
+              <div class="pillar-box">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div class="pillar-text">
+                  <h4>80G & 12A Tax Exempted</h4>
+                  <p>All contributions are eligible for 50% deduction under Section 80G of Income Tax Act.</p>
+                </div>
+              </div>
+
+              <div class="pillar-box">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="pillar-text">
+                  <h4>ISO 9001:2015 Certified</h4>
+                  <p>Standardized quality management procedures governing field aid distribution.</p>
+                </div>
+              </div>
+
+              <div class="pillar-box">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </div>
+                <div class="pillar-text">
+                  <h4>Direct Ground Impact</h4>
+                  <p>Zero middleman leakage with verified handovers directly to genuine beneficiaries.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Transparency & Certification Matrix -->
+          <div class="about-skills">
+            <!-- Legal Entity & MCA Registrations -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <h4 class="category-title">Govt. Registrations & Legal Standing</h4>
+              </div>
+              <div class="skill-badges-container">
+                <span class="tech-pill">Section 8 Licensed (MCA)</span>
+                <span class="tech-pill">NITI Aayog NGO-Darpan</span>
+                <span class="tech-pill">CSR-1 Registered (MCA Gov)</span>
+                <span class="tech-pill">Registered in Bilaspur, CG</span>
+                <span class="tech-pill">Pan-India Operational Scope</span>
+              </div>
+            </div>
+
+            <!-- Tax Exemption & Certifications -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <h4 class="category-title">Tax Exemption & Certifications</h4>
+              </div>
+              <div class="skill-badges-container">
+                <span class="tech-pill">80G Approved (50% Exemption)</span>
+                <span class="tech-pill">12A Permanent Registration</span>
+                <span class="tech-pill">ISO 9001:2015 Quality Certified</span>
+                <span class="tech-pill">PAN & TAN Verified</span>
+                <span class="tech-pill">Instant 80G E-Receipts</span>
+              </div>
+            </div>
+
+            <!-- Operational Governance & Verification -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <h4 class="category-title">Governance & Financial Integrity</h4>
+              </div>
+              <div class="skill-badges-container">
+                <span class="tech-pill">Annual CA Audited Financials</span>
+                <span class="tech-pill">Zero Administrative Commission</span>
+                <span class="tech-pill">Geo-Tagged Field Verification</span>
+                <span class="tech-pill">100% Public Utilization Reports</span>
+                <span class="tech-pill">Direct Beneficiary Enrollment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. CORE INITIATIVES SECTION (PROJECT SEVA, BACHPANSHALA, JEEV, UDAAN)
+         ====================================================================== -->
+    <section class="services-section section-spacing" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Core Initiatives</span>
+          <h2 class="section-title">Four Pillars of Ground-Level Social Action</h2>
+          <p class="section-subtitle">
+            Focused, transparent interventions addressing acute hunger, foundational education, stray animal distress, and women empowerment.
+          </p>
+        </div>
+
+        <!-- 4-Column CSS Grid -->
+        <div class="services-grid">
+          <!-- Card 1: Project Seva -->
+          <article class="service-card" id="service-card-seva">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Project Seva</h3>
+            <p class="service-description">
+              Food distribution, winter relief drives, blanket distribution, and essential nutrition aid for underprivileged families across 28 states.
+            </p>
+            <ul class="service-feature-list">
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>50,000+ cooked meals & ration kits distributed</span>
+              </li>
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Annual winter blanket & warm clothing drives</span>
+              </li>
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Direct emergency relief for flood-hit families</span>
+              </li>
+            </ul>
+            <a href="#contact" class="service-action-link">
+              <span>Support Project Seva</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+
+          <!-- Card 2: Project Bachpanshala -->
+          <article class="service-card" id="service-card-bachpan">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Project Bachpanshala</h3>
+            <p class="service-description">
+              Quality education, free learning resources, stationery kits, and mentorship for street children and first-generation learners.
+            </p>
+            <ul class="service-feature-list">
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Community open-air learning hubs & evening classes</span>
+              </li>
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Free textbooks, notebooks & stationery kits</span>
+              </li>
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>1-on-1 mentorship preventing dropout rates</span>
+              </li>
+            </ul>
+            <a href="#contact" class="service-action-link">
+              <span>Support Bachpanshala</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+
+          <!-- Card 3: Project Jeev -->
+          <article class="service-card" id="service-card-jeev">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Project Jeev</h3>
+            <p class="service-description">
+              Stray animal rescue, emergency medical treatment, anti-rabies vaccination, and daily feeding programs for voiceless strays.
+            </p>
+            <ul class="service-feature-list">
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>800+ injured stray animals rescued and treated</span>
+              </li>
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Daily community feeding for 500+ stray dogs</span>
+              </li>
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Reflective safety collar drives preventing accidents</span>
+              </li>
+            </ul>
+            <a href="#contact" class="service-action-link">
+              <span>Support Project Jeev</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+
+          <!-- Card 4: Project Udaan -->
+          <article class="service-card" id="service-card-udaan">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Project Udaan</h3>
+            <p class="service-description">
+              Women empowerment through vocational training, stitching/handicraft skill-building, and menstrual hygiene awareness workshops.
+            </p>
+            <ul class="service-feature-list">
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Tailoring & stitching vocational workshop cohorts</span>
+              </li>
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Free sanitary pad distribution & health counseling</span>
+              </li>
+              <li class="service-feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Micro-entrepreneurship & market linkage support</span>
+              </li>
+            </ul>
+            <a href="#contact" class="service-action-link">
+              <span>Support Project Udaan</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. PROJECTS / PORTFOLIO SECTION (3 INTERACTIVE SHOWCASE CARDS)
+         ====================================================================== -->
+    <section class="projects-section section-spacing" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Ground Impact</span>
+          <h2 class="section-title">Featured Relief Missions & Field Case Studies</h2>
+          <p class="section-subtitle">
+            Explore documented, audited ground deployments delivering tangible change to vulnerable communities, eager children, and voiceless animals.
+          </p>
+        </div>
+
+        <!-- Interactive Category Filter -->
+        <div class="portfolio-filters" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab">All Missions</button>
+          <button class="filter-btn" data-filter="relief" role="tab">Relief Drives</button>
+          <button class="filter-btn" data-filter="education" role="tab">Child Education</button>
+          <button class="filter-btn" data-filter="welfare" role="tab">Animal Rescue</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: Winter Relief -->
+          <article class="project-card" data-category="relief" id="project-card-1">
+            <div class="project-visual">
+              <span class="project-badge-overlay">15,000+ Reached</span>
+              <div class="mockup-canvas">
+                <div class="mockup-header-bar">
+                  <span class="mockup-tag">RELIEF // WINTER DRIVE</span>
+                  <span style="font-size: 0.6875rem; color: #10b981;">● 15,420 DISTRIBUTED</span>
+                </div>
+                <div class="mockup-chart">
+                  <div class="chart-bar" style="height: 45%;"></div>
+                  <div class="chart-bar" style="height: 65%;"></div>
+                  <div class="chart-bar" style="height: 50%;"></div>
+                  <div class="chart-bar" style="height: 85%;"></div>
+                  <div class="chart-bar" style="height: 70%;"></div>
+                  <div class="chart-bar" style="height: 95%;"></div>
+                  <div class="chart-bar" style="height: 90%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-details">
+              <span class="project-category">Humanitarian Relief & Warmth</span>
+              <h3 class="project-title">Pan-India Winter Warmth & Ration Drive</h3>
+              <p class="project-description">
+                Direct distribution of 15,000+ heavy thermal blankets, woolens, and monthly ration essentials to footpath dwellers and rural laborers facing harsh freezing winters.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag-pill">15,000+ Blankets</span>
+                <span class="project-tag-pill">28 States Reached</span>
+                <span class="project-tag-pill">Direct Handoff</span>
+                <span class="project-tag-pill">GPS Verified</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="project-action-btn action-btn-case" onclick="openProjectModal('winter_drive')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                  <span>Field Report</span>
+                </button>
+                <a href="#contact" class="project-action-btn action-btn-demo">
+                  <span>Support Mission</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Bachpanshala Education -->
+          <article class="project-card" data-category="education" id="project-card-2">
+            <div class="project-visual">
+              <span class="project-badge-overlay">450+ Learners</span>
+              <div class="mockup-canvas">
+                <div class="mockup-header-bar">
+                  <span class="mockup-tag">BACHPANSHALA // LITERACY</span>
+                  <span style="font-size: 0.6875rem; color: #38bdf8;">450+ STUDENTS</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 0;">
+                  <div style="height: 8px; width: 70%; background: #334155; border-radius: 4px;"></div>
+                  <div style="height: 8px; width: 90%; background: #1e293b; border-radius: 4px;"></div>
+                  <div style="height: 18px; width: 100%; background: rgba(59, 130, 246, 0.2); border-radius: 4px; display: flex; align-items: center; padding: 0 8px;">
+                    <span style="font-size: 0.625rem; color: #93c5fd;">Open-Air Hub • Bilaspur Central</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-details">
+              <span class="project-category">Child Literacy & Youth Mentorship</span>
+              <h3 class="project-title">Free Open-Air Schooling for Slum Children</h3>
+              <p class="project-description">
+                Providing informal evening educational centers, distributing free textbooks and stationery, and mentoring first-generation learners toward formal school enrollments.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag-pill">Slum Learning Hubs</span>
+                <span class="project-tag-pill">Free Stationery</span>
+                <span class="project-tag-pill">Zero Dropouts</span>
+                <span class="project-tag-pill">Volunteer Tutors</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="project-action-btn action-btn-case" onclick="openProjectModal('bachpanshala_drive')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                  <span>Field Report</span>
+                </button>
+                <a href="#contact" class="project-action-btn action-btn-demo">
+                  <span>Sponsor a Child</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Animal Welfare -->
+          <article class="project-card" data-category="welfare" id="project-card-3">
+            <div class="project-visual">
+              <span class="project-badge-overlay">800+ Animals Saved</span>
+              <div class="mockup-canvas">
+                <div class="mockup-header-bar">
+                  <span class="mockup-tag">PROJECT JEEV // 24/7 VET</span>
+                  <span style="font-size: 0.6875rem; color: #fbbf24;">★ 800+ TREATED</span>
+                </div>
+                <div style="display: flex; gap: 8px; flex: 1; align-items: center;">
+                  <div style="width: 45px; height: 45px; background: #1e293b; border-radius: 6px; border: 1px solid #334155; display: flex; align-items: center; justify-content: center;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </div>
+                  <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                    <div style="height: 8px; width: 65%; background: #e2e8f0; border-radius: 2px;"></div>
+                    <div style="height: 6px; width: 40%; background: #64748b; border-radius: 2px;"></div>
+                    <div style="height: 12px; width: 50%; background: #10b981; border-radius: 3px; margin-top: 2px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-details">
+              <span class="project-category">Street Animal Rescue & Healthcare</span>
+              <h3 class="project-title">Stray Animal Medical Rehabilitation</h3>
+              <p class="project-description">
+                Emergency veterinary treatments for hit-and-run strays, anti-rabies vaccination drives, reflective collar fastening, and everyday community feeding drives.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag-pill">800+ Rescues</span>
+                <span class="project-tag-pill">Anti-Rabies Drive</span>
+                <span class="project-tag-pill">Reflective Collars</span>
+                <span class="project-tag-pill">Daily Stray Meals</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="project-action-btn action-btn-case" onclick="openProjectModal('jeev_rescue')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                  <span>Field Report</span>
+                </button>
+                <a href="#contact" class="project-action-btn action-btn-demo">
+                  <span>Sponsor Care</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. CONTACT & VOLUNTEER SECTION (FORM WITH VALIDATION & DETAILS)
+         ====================================================================== -->
+    <section class="contact-section section-spacing" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Join Our Movement</span>
+          <h2 class="section-title">Join As A Volunteer, Partner, Or Donor</h2>
+          <p class="section-subtitle">
+            Whether you wish to offer your time as a ground volunteer, contribute a tax-deductible 80G donation, or initiate a CSR corporate partnership, we welcome you with open arms.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: NGO Contact & Office Information -->
+          <div class="contact-info-panel">
+            <h3 class="info-title">Community Outreach HQ</h3>
+            <p class="info-subtitle">
+              Connect directly with our youth-led community team. Every message is received and answered promptly by our dedicated coordinators.
+            </p>
+
+            <div class="contact-channels">
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="channel-content">
+                  <h4>Email Support & Queries</h4>
+                  <a href="mailto:contact@inamigosfoundation.org">contact@inamigosfoundation.org</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="channel-content">
+                  <h4>Volunteer Helpline & WhatsApp</h4>
+                  <a href="tel:+919109923450">+91 91099 23450</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="channel-content">
+                  <h4>Headquarters & Outposts</h4>
+                  <p>Bilaspur, Chhattisgarh 495001, India (Pan-India Operational Reach)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="guarantee-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>
+                <strong>100% Tax Deductible (80G):</strong> Official digitized donation receipts with 80G registration numbers generated within 24 hours.
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Form -->
+          <div class="contact-form-card">
+            <h3 class="form-heading">Volunteer & Support Registration</h3>
+            <p class="form-subheading">Fill out the brief details below and our team will get in touch immediately.</p>
+
+            <!-- Live Status Alert Container -->
+            <div id="form-status-alert" class="form-alert" role="alert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span id="form-alert-message"></span>
+            </div>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Full Name <span>*</span></label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Aman Sharma" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address <span>*</span></label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="aman@example.com" required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-service" class="form-label">How Would You Like to Support?</label>
+                  <select id="contact-service" name="service" class="form-select">
+                    <option value="volunteer">Join as a Volunteer (Ground or Remote)</option>
+                    <option value="donation">Donate to a Cause (80G Tax Deductible)</option>
+                    <option value="csr">Corporate CSR Partnership</option>
+                    <option value="bachpan">Sponsor a Bachpanshala Student Kit</option>
+                    <option value="animal">Project Jeev Animal Treatment Support</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="contact-city" class="form-label">City / State <span>*</span></label>
+                  <input type="text" id="contact-city" name="city" class="form-input" placeholder="e.g. Bilaspur, Raipur, Delhi" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message / Collaboration Note <span>*</span></label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell us about yourself, availability, or how you wish to collaborate..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="contact-submit-btn" style="width: 100%; padding: 14px 24px;">
+                <span id="submit-btn-text">Submit Registration</span>
+                <svg id="submit-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       7. FOOTER SECTION
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Summary -->
+        <div class="footer-brand">
+          <a href="#top" class="footer-logo">
+            <div class="brand-icon" style="width: 32px; height: 32px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <span>InAmigos Foundation</span>
+          </a>
+          <p class="footer-description">
+            A registered Section 8 Non-Profit Organization (NITI Aayog, 80G, 12A, and ISO 9001:2015 certified) dedicated to grassroot community transformation, child literacy, stray animal welfare, and emergency relief across India.
+          </p>
+          <div class="social-links-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram Page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter Page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Section Navigation -->
+        <div>
+          <h4 class="footer-column-title">Our Initiatives</h4>
+          <ul class="footer-links">
+            <li><a href="#services" class="footer-link">Project Seva (Relief)</a></li>
+            <li><a href="#services" class="footer-link">Project Bachpanshala</a></li>
+            <li><a href="#services" class="footer-link">Project Jeev (Animal Care)</a></li>
+            <li><a href="#services" class="footer-link">Project Udaan (Empowerment)</a></li>
+            <li><a href="#projects" class="footer-link">Field Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Compliance & Certifications -->
+        <div>
+          <h4 class="footer-column-title">Transparency</h4>
+          <ul class="footer-links">
+            <li><a href="#about" class="footer-link">NITI Aayog NGO-Darpan</a></li>
+            <li><a href="#about" class="footer-link">Section 8 Incorporation</a></li>
+            <li><a href="#about" class="footer-link">80G & 12A Tax Exemption</a></li>
+            <li><a href="#about" class="footer-link">ISO 9001:2015 Standards</a></li>
+            <li><a href="#about" class="footer-link">Annual Audited Accounts</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Office -->
+        <div>
+          <h4 class="footer-column-title">Registered Office</h4>
+          <p style="font-size: 0.9375rem; line-height: 1.6; margin-bottom: 12px;">
+            InAmigos Foundation Secretariat<br>
+            Bilaspur, Chhattisgarh 495001<br>
+            India
+          </p>
+          <p style="font-size: 0.875rem; color: #64748b;">
+            PAN-India Field Coordinators<br>
+            contact@inamigosfoundation.org
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 InAmigos Foundation. A Section 8 Non-Profit Organization (NITI Aayog, 80G & 12A Certified). All rights reserved.</p>
+        <a href="#top" class="back-to-top-btn" id="back-to-top">
+          <span>Back to top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       INTERACTIVE MODAL FOR RELIEF MISSION FIELD REPORTS
+       ======================================================================== -->
+  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <span class="modal-badge" id="modal-project-category">Field Report</span>
+      <h3 class="modal-title" id="modal-project-title">Mission Title</h3>
+      
+      <div class="modal-body" id="modal-project-body">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="modal-meta-grid" id="modal-project-meta">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 24px;">
+        <a href="#contact" class="btn btn-primary" onclick="closeProjectModal()" style="font-size: 0.875rem; padding: 10px 20px;">
+          <span>Support This Initiative</span>
+        </a>
+        <button class="btn btn-secondary" onclick="closeProjectModal()" style="font-size: 0.875rem; padding: 10px 20px;">
+          <span>Close Window</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       EMBEDDED VANILLA JAVASCRIPT FOR FULL FUNCTIONALITY
+       ======================================================================== -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+
+    if (mobileBtn && mobileDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        mobileBtn.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close drawer when any mobile nav link is clicked
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+          mobileBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // 2. Sticky Header elevation on scroll
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // 3. Active Nav Link on Scroll (Intersection Observer)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+      const scrollPos = window.scrollY + 120;
+
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      if (!currentSectionId && window.scrollY < 200) {
+        currentSectionId = 'home';
+      }
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('active');
+        }
+      });
+
+      mobileNavLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // 4. Portfolio Filter Buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterValue === 'all' || category === filterValue) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 5. Interactive Relief Mission Modal Data
+    const projectData = {
+      winter_drive: {
+        category: 'Humanitarian Relief & Warmth',
+        title: 'Pan-India Winter Blanket & Ration Mission',
+        description: 'During severe winter cold waves, millions of daily-wage laborers, migrant workers, and footpath dwellers endure near-freezing night temperatures without warm woolens. InAmigos Foundation mobilizes an extensive youth volunteer network across 28+ states, conducting nocturnal on-ground distributions with verified geotagged photo documentation and zero administrative delay.',
+        meta: [
+          { label: 'Thermal Blankets Delivered', value: '15,000+ Blankets' },
+          { label: 'Target States', value: 'Delhi-NCR, CG, UP, Bihar, MP' },
+          { label: 'Operational Model', value: '100% Direct Ground Handoff' },
+          { label: 'Audit & Transparency', value: 'CA Audited & 80G Certified' }
+        ]
+      },
+      bachpanshala_drive: {
+        category: 'Child Literacy & Youth Development',
+        title: 'Project Bachpanshala - Street Education Hubs',
+        description: 'Project Bachpanshala establishes safe, open-air, informal evening tutoring centers directly inside underserved slum settlements. Volunteer educators provide reading, mathematics, digital literacy, and personal hygiene coaching. Over 450+ children who had dropped out of school have been rehabilitated and enrolled into formal government schools.',
+        meta: [
+          { label: 'Children Enrolled', value: '450+ Slum Children' },
+          { label: 'School Re-enrollment', value: '88% Formal Transition' },
+          { label: 'Educational Supplies', value: 'Free Bags, Books, Stationery' },
+          { label: 'Daily Nutrition', value: 'Wholesome Healthy Snacks' }
+        ]
+      },
+      jeev_rescue: {
+        category: 'Street Animal Welfare & Veterinary Care',
+        title: 'Project Jeev - Emergency Rescue & Stray Care',
+        description: 'Street animals in urban environments frequently suffer from road accidents, maggot wounds, and malnutrition with no municipal recourse. Project Jeev operates an emergency treatment network, coordinating fast on-spot medical dressings, anti-rabies vaccinations, glowing reflective collar attachments to prevent vehicle hits, and daily feeding routes.',
+        meta: [
+          { label: 'Critical Rescues', value: '800+ Animals Treated' },
+          { label: 'Anti-Rabies Vaccines', value: '1,200+ Dogs Immunized' },
+          { label: 'Reflective Safety Collars', value: '3,000+ Collars Fastened' },
+          { label: 'Daily Stray Feeds', value: '500+ Community Meals' }
+        ]
+      },
+      // Backward compatibility aliases
+      finpulse: {
+        category: 'Humanitarian Relief & Warmth',
+        title: 'Pan-India Winter Blanket & Ration Mission',
+        description: 'Nationwide ground mobilization delivering 15,000+ heavy thermal blankets, woolens, and monthly ration essentials to footpath dwellers and rural laborers facing harsh freezing winters.',
+        meta: [
+          { label: 'Thermal Blankets Delivered', value: '15,000+ Blankets' },
+          { label: 'Operational Reach', value: '28 Indian States' }
+        ]
+      },
+      aura: {
+        category: 'Child Literacy & Youth Mentorship',
+        title: 'Project Bachpanshala - Slum Education',
+        description: 'Providing informal evening educational centers, distributing free textbooks and stationery, and mentoring first-generation learners toward formal school enrollments.',
+        meta: [
+          { label: 'Enrolled Students', value: '450+ Slum Children' },
+          { label: 'Re-enrollment Rate', value: '88% Transition' }
+        ]
+      },
+      veloce: {
+        category: 'Street Animal Healthcare',
+        title: 'Project Jeev - Stray Animal Rehabilitation',
+        description: 'Emergency veterinary treatments for hit-and-run strays, anti-rabies vaccination drives, reflective collar fastening, and everyday community feeding drives.',
+        meta: [
+          { label: 'Animals Treated', value: '800+ Rescued & Cared' },
+          { label: 'Collars Fastened', value: '3,000+ Reflective Collars' }
+        ]
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectData[key];
+      if (!data) return;
+
+      document.getElementById('modal-project-category').textContent = data.category;
+      document.getElementById('modal-project-title').textContent = data.title;
+      document.getElementById('modal-project-body').innerHTML = `<p>${data.description}</p>`;
+
+      const metaContainer = document.getElementById('modal-project-meta');
+      metaContainer.innerHTML = data.meta.map(item => `
+        <div class="meta-item">
+          <h5>${item.label}</h5>
+          <p>${item.value}</p>
+        </div>
+      `).join('');
+
+      document.getElementById('project-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+      document.getElementById('project-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click or ESC key
+    const modal = document.getElementById('project-modal');
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeProjectModal();
+      });
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeProjectModal();
+      });
+    }
+
+    // 6. Contact Form Validation & Submission Handling
+    const contactForm = document.getElementById('contact-form');
+    const alertBox = document.getElementById('form-status-alert');
+    const alertMsg = document.getElementById('form-alert-message');
+    const submitBtn = document.getElementById('contact-submit-btn');
+    const submitBtnText = document.getElementById('submit-btn-text');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+
+        // Basic Validation
+        if (!name || !email || !message) {
+          showAlert('Please complete all required fields (*)', 'error');
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showAlert('Please enter a valid email address.', 'error');
+          return;
+        }
+
+        // Simulate Submission
+        submitBtn.disabled = true;
+        submitBtnText.textContent = 'Submitting Registration...';
+
+        setTimeout(() => {
+          showAlert(`Thank you, ${name}! Your registration has been received with warm gratitude. An InAmigos community coordinator will connect with you via Email or WhatsApp shortly.`, 'success');
+          contactForm.reset();
+          submitBtn.disabled = false;
+          submitBtnText.textContent = 'Submit Registration';
+        }, 800);
+      });
+    }
+
+    function showAlert(message, type) {
+      if (!alertBox || !alertMsg) return;
+      alertMsg.textContent = message;
+      alertBox.className = `form-alert ${type}`;
+      alertBox.style.display = 'flex';
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>

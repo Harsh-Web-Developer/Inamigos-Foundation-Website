@@ -1,0 +1,6 @@
+{
+  "name": "InAmigos Foundation - NGO Social Impact Platform",
+  "description": "A Section 8 Non-Profit organization registered with NITI Aayog, 80G, 12A, and ISO certifications dedicated to ground-level social transformation across India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
